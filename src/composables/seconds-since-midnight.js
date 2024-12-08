@@ -6,7 +6,6 @@ import {
   MINUTES_IN_HOUR,
   HUNDRED_PERCENT
 } from '../constants'
-import { currentDate } from '../functions'
 
 export function useSecondsSinceMidnight() {
   const secondsSinceMidnight = ref(getSecondsSinceMidnight())
@@ -35,7 +34,7 @@ export function useSecondsSinceMidnight() {
   }
 }
 function getSecondsSinceMidnight() {
-  const now = currentDate()
+  const now = new Date()
 
   return (
     SECONDS_IN_MINUTE * MINUTES_IN_HOUR * now.getHours() +
